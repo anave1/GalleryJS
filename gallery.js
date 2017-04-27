@@ -21,10 +21,13 @@ var chico = [
 var current = " ";
 function shuffleGallery()
 {
-var rand = Math.floor(Math.random() * (chico.length-1));
+var rand = Math.floor(Math.random() * (chico.length));
 while(current == chico[rand]){
-rand = Math.floor(Math.random() * (chico.length-1));
+rand = Math.floor(Math.random() * (chico.length));
 }
 current = chico[rand];
+document.getElementById('picture').src = chico[rand].picture;
+document.getElementById('caption').innerHTML = chico[rand].description;
+document.getElementById('source').innerHTML = "Image courtesy of: " + chico[rand].from;
 console.log(chico[rand]);
 }
